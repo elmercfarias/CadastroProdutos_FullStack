@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Produtos</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Produto</th>
+          <th>Preço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let publicacao of publicacoes | async">
+          <td>{{produtos.codigo}}</td>
+          <td>{{produtos.nome}}</td>
+          <td>{{produtos.preco}}</td>
+          <td>
+		  <button (click)="produtosDetails(produtos.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+		  <button (click)="updateProdutos(produtos.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+		  <button (click)="deleteProdutos(produtos.id)" class="btn btn-danger">Delete</button>
+          
+              
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
